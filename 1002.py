@@ -13,7 +13,7 @@ for i in range(T):
         print("-1")
     elif r  > r2 + r1 or r < abs(r2 - r1):
         print("0")
-    elif r == r2 + r1 or r == abs(r2 - r1):       #
+    elif r == r2 + r1 or r == abs(r2 - r1):     
         print("1")
     else:
         print("2")
