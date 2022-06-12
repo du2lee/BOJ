@@ -1,6 +1,11 @@
-import sys
+# import sys
 
-A = int(sys.stdin.readline())
-B = int(sys.stdin.readline())
+# A = int(sys.stdin.readline())
+# B = int(sys.stdin.readline())
 
-print(A + B)
+# print(A + B)
+
+a = int(input())
+b = int(input())
+
+print(a + b)
