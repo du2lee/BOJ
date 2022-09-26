@@ -1,0 +1,1 @@
+SELECT ANIMAL_TYPE, case when NAME IS NULL then "No name" else NAME end as NAME, SEX_UPON_INTAKE FROM ANIMAL_INS
