@@ -1,0 +1,2 @@
+
+SELECT ORDER_ID, PRODUCT_ID, OUT_DATE, (case when MONTH(OUT_DATE) < 5 or (MONTH(OUT_DATE) = 5 and DAY(OUT_DATE) = 1) then '출고완료' when OUT_DATE IS NULL then '출고미정' else '출고대기' end) as '출고여부' FROM FOOD_ORDER ORDER BY ORDER_ID
