@@ -1,16 +1,19 @@
-import sys
+array = []
+for _ in range(16):
+    array.append([1] * 14)
 
-T = int(sys.stdin.readline())
+for i in range(1, 16):
+    for j in range(14):
+        count = 0
+        for k in range(j + 1):
+            count += array[i - 1][k]
+        array[i][j] = count
+array = array[1:]
 
-#def func(k, N):                # 재귀함수로 풀이
-#    if k == 0:
-#        return N
-#    if N == 1:
-#        return 1
-#    return (func(k - 1, N) + func(k , N - 1))
 
+T = int(input())
 
-for i in range(T):
-    k = int(sys.stdin.readline())
-    N = int(sys.stdin.readline())
-    print(func(k,N))
+for _ in range(T):
+    a = int(input())
+    b = int(input())
+    print(array[a][b - 1])
