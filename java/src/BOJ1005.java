@@ -21,13 +21,11 @@ public class BOJ1005 {
             buildTimes.add(0);
             check.add(0);
 
-            for(int j = 0; j < N; j++){
+            for(int j = 1; j <= N; j++){
                 int time = sc.nextInt();
                 times.add(time);
                 buildTimes.add(0);
                 check.add(0);
-            }
-            for(int j = 1; j <= N; j++){
                 dict.put(j, new ArrayList<Integer>());
                 dict2.put(j, new ArrayList<Integer>());
                 dict3.put(j, 0);
@@ -56,8 +54,12 @@ public class BOJ1005 {
             Queue<Integer> q = new LinkedList<Integer>();
 
             for(int k = 1; k <= N; k++){
-                if(dict3.get(k) == 1){
+                int cache = dict3.get(k);
+                if(cache == 1){
                     q.add(k);
+                    buildTimes.set(k, times.get(k));
+                }
+                else if(cache == 0){
                     buildTimes.set(k, times.get(k));
                 }
             }
@@ -84,12 +86,6 @@ public class BOJ1005 {
                         q.add(nextBuilding);
                         buildTimes.set(nextBuilding, Collections.max(cache) + times.get(nextBuilding));
                     }
-                }
-            }
-
-            for(int j=0;j<=N;j++){
-                if(buildTimes.get(j) == 0){
-                    buildTimes.set(j, times.get(j));
                 }
             }
             System.out.println(buildTimes.get(W));
