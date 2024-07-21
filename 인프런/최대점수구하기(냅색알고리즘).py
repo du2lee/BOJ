@@ -1,3 +1,21 @@
+N, M = list(map(int, input().split()))
+
+s = []
+dp = [0 for _ in range(M + 1)]
+
+for _ in range(N):
+    s.append(list(map(int, input().split())))
+
+s.sort()
+
+for score, time in s:
+    for idx in range(M, time - 1 , -1):
+        dp[idx] = max(dp[idx], dp[idx - time] + score)
+
+print(dp[-1])
+
+
+
 # ====== S : 앞에서 계산 =======
 
 # from copy import deepcopy
@@ -25,20 +43,20 @@
 
 # ====== S : 뒤에서 계산 =======
 
-N, M = list(map(int, input().split()))
+# N, M = list(map(int, input().split()))
 
-questions = []
+# questions = []
 
-for _ in range(N):
-    questions.append(list(map(int, input().split())))
+# for _ in range(N):
+#     questions.append(list(map(int, input().split())))
 
-dp = [0 for _ in range(M + 1)]
+# dp = [0 for _ in range(M + 1)]
 
-for score, time in questions:
+# for score, time in questions:
     
-    for idx in range(M, time - 1, -1):
-        dp[idx] = max(dp[idx], dp[idx - time] + score)
+#     for idx in range(M, time - 1, -1):
+#         dp[idx] = max(dp[idx], dp[idx - time] + score)
         
-print(dp[-1])
+# print(dp[-1])
 
 # ====== E : 뒤에서 계산 =======
