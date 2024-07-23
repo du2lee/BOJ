@@ -32,12 +32,3 @@ for _ in range(int(input())):
             ans = vec_sum
     
     print(ans)
-
-
-
-
-# import math
-
-# a = (2 * (200000 ** 2)) ** (1/2)
-
-# print(a)
